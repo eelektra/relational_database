@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_30_235254) do
+ActiveRecord::Schema.define(version: 2023_01_31_024550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "destinations", force: :cascade do |t|
+    t.string "name"
+    t.boolean "booked?"
+    t.integer "num_of_days"
+    t.bigint "traveller_id"
+    t.index ["traveller_id"], name: "index_destinations_on_traveller_id"
+  end
 
   create_table "travellers", force: :cascade do |t|
     t.string "name"
@@ -21,4 +29,5 @@ ActiveRecord::Schema.define(version: 2023_01_30_235254) do
     t.integer "year"
   end
 
+  add_foreign_key "destinations", "travellers"
 end
