@@ -4,7 +4,6 @@ class CreateTraveller < ActiveRecord::Migration[5.2]
       t.string :name
       t.boolean :over_18?
       t.integer :year
-      
       t.timestamps
     end
   end

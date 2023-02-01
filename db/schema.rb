@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2023_01_31_024550) do
     t.string "name"
     t.boolean "booked?"
     t.integer "num_of_days"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "traveller_id"
     t.index ["traveller_id"], name: "index_destinations_on_traveller_id"
   end
@@ -27,6 +29,8 @@ ActiveRecord::Schema.define(version: 2023_01_31_024550) do
     t.string "name"
     t.boolean "over_18?"
     t.integer "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "destinations", "travellers"

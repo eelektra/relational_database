@@ -4,7 +4,6 @@ class CreateDestination < ActiveRecord::Migration[5.2]
       t.string :name
       t.boolean :booked?
       t.integer :num_of_days
-
       t.timestamps
       t.references :traveller, foreign_key: true
     end
